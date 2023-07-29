@@ -314,7 +314,8 @@ router.post('/:order_id/cancel', userAuthorization, async (req, res) => {
 
     try {
       const order = await Order.findOneAndUpdate({
-        '_id': order_id
+        '_id': order_id,
+        status: 'preparando'
       },
       {
         status: 'cancelado'
@@ -326,7 +327,7 @@ router.post('/:order_id/cancel', userAuthorization, async (req, res) => {
       if (!order) {
         return res.status(404).json({
           success: false,
-          error: 'Not found.'
+          error: 'Not found or unable to cancel.'
         })
       }
   
