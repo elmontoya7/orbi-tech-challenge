@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"a6.init@gmail.com\",\n    \"password\": \"alexisss\"\n}",
+							"raw": "{\n    \"email\": \"a6.init+6@gmail.com\",\n    \"password\": \"alexisss\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -97,6 +97,72 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": true,\n    \"resource\": {\n        \"_id\": \"64c18ca53d0d3c49333e5cb3\",\n        \"name\": \"Alexis Rodríguez\",\n        \"email\": \"a6.init@gmail.com\",\n        \"password\": \"$2a$08$qvrekSCfKdt3THW0a89cW.5.yn3AhPVAdvmR95h4OMxnXpxiRChfW\",\n        \"blocked\": false,\n        \"created_at\": \"2023-07-26T21:14:13.711Z\",\n        \"updated_at\": \"2023-07-26T21:14:13.711Z\",\n        \"__v\": 0,\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpIjoiNjRjMThjYTUzZDBkM2M0OTMzM2U1Y2IzIiwiaWF0IjoxNjkwNDEzNzgzLCJleHAiOjE2OTA0MTQwODN9.2o59E7nH0zHp-uETwPonTHegEMhZDGZruXy5YczZAPc\"\n    }\n}"
+						},
+						{
+							"name": "user blocked",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"a6.init+6@gmail.com\",\n    \"password\": \"alexisss\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-BC5ZOPxLK7j+1LjSvir30LpF/CQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jul 2023 05:04:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"error\": \"User has been disabled for security reasons.\"\n}"
 						}
 					]
 				},
@@ -1404,6 +1470,71 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": false,\n    \"error\": \"Payment card data is not valid\"\n}"
+						},
+						{
+							"name": "blocked user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"64c18ca53d0d3c49333e5cb3\",\n    \"tip\": 10,\n    \"address_line_1\": \"Paseo de la Reforma 296\",\n    \"address_line_2\": \"07600\",\n    \"pay_on_delivery\": false,\n    \"card_number\": \"4242424242424242\",\n    \"card_exp_date\": \"09/2023\",\n    \"items\": [\n        {\n            \"dish_id\": \"64c3ff6824962f196c2d752b\"\n        },\n        {\n            \"dish_id\": \"64c3ff7924962f196c2d752d\"\n        },\n        {\n            \"dish_id\": \"64c3ff4724962f196c2d7529\",\n            \"modifiers\": [\n                \"64c2b4026712f08897a90ec5\"\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/order",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"order"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-BC5ZOPxLK7j+1LjSvir30LpF/CQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jul 2023 05:07:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"error\": \"User has been disabled for security reasons.\"\n}"
 						}
 					]
 				},
@@ -1620,6 +1751,165 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1928"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"788-qbLm67CdZasNEuckbXdTRs3D9a0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jul 2023 05:02:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"total\": 7,\n    \"resource\": [\n        {\n            \"_id\": \"64c4916d19c293c5e08939e2\",\n            \"name\": \"Taco Feliz\",\n            \"email\": \"a6.init+tacofeliz@gmail.com\",\n            \"password\": \"$2a$08$4tpM3/BCCpkP3rwqptL7L..lqIcF4z0m4OXsINctLlOnWv/fSbgEW\",\n            \"blocked\": false,\n            \"created_at\": \"2023-07-29T04:11:25.790Z\",\n            \"updated_at\": \"2023-07-29T04:11:25.790Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"64c1bb829143533347e950a5\",\n            \"name\": \"Alexis Rodríguez\",\n            \"email\": \"a6.init+6@gmail.com\",\n            \"password\": \"$2a$08$kf0CnTlFEBj/5netfLTfE.JCs685vvZnO8BmZP3158J4fgjCMSkFS\",\n            \"blocked\": false,\n            \"created_at\": \"2023-07-27T00:34:10.200Z\",\n            \"updated_at\": \"2023-07-27T00:34:10.200Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"64c1ba69237f53eda78bf28f\",\n            \"name\": \"Alexis Rodríguez\",\n            \"email\": \"a6.init+5@gmail.com\",\n            \"password\": \"$2a$08$/iEuF8l4AFcLafT32BoMIueYeofAW0dJzJ0ZL/s11wwoDZR88B5QG\",\n            \"blocked\": false,\n            \"created_at\": \"2023-07-27T00:29:29.909Z\",\n            \"updated_at\": \"2023-07-27T00:29:29.909Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"64c1b9e62dbe749f49fd2526\",\n            \"name\": \"Alexis Rodríguez\",\n            \"email\": \"a6.init+4@gmail.com\",\n            \"password\": \"$2a$08$GxnXwxxNw4VvG9uUsin0AO/oBPdzoOGHkPQVfCp8R0.ZCta2uDEga\",\n            \"blocked\": false,\n            \"created_at\": \"2023-07-27T00:27:18.284Z\",\n            \"updated_at\": \"2023-07-27T00:27:18.284Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"64c1b959b743c4a94af77f82\",\n            \"name\": \"Alexis Rodríguez\",\n            \"email\": \"a6.init+3@gmail.com\",\n            \"password\": \"$2a$08$sWJkQcO6fnHIef9UbsxRyuqVo2JoJstdv87c.H8DfZR.tyjH9dHne\",\n            \"blocked\": false,\n            \"created_at\": \"2023-07-27T00:24:57.316Z\",\n            \"updated_at\": \"2023-07-27T00:24:57.316Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"64c1b81961f040e24eacf70a\",\n            \"name\": \"Alexis Rodríguez\",\n            \"email\": \"a6.init+2@gmail.com\",\n            \"password\": \"$2a$08$vlZU429K9FH0l8ZSZCTAN.UXrL74GIELnFX8jPwuqObayJLOon5rK\",\n            \"blocked\": false,\n            \"created_at\": \"2023-07-27T00:19:37.700Z\",\n            \"updated_at\": \"2023-07-27T00:19:37.700Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"64c18ca53d0d3c49333e5cb3\",\n            \"name\": \"Alexis Rodríguez\",\n            \"email\": \"a6.init@gmail.com\",\n            \"password\": \"$2a$08$qvrekSCfKdt3THW0a89cW.5.yn3AhPVAdvmR95h4OMxnXpxiRChfW\",\n            \"blocked\": false,\n            \"created_at\": \"2023-07-26T21:14:13.711Z\",\n            \"updated_at\": \"2023-07-26T21:14:13.711Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "block user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/64c1bb829143533347e950a5/block",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"64c1bb829143533347e950a5",
+								"block"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/user/64c1bb829143533347e950a5/block",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"64c1bb829143533347e950a5",
+										"block"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "296"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"128-pzhz18srBeLRImcIrXm8Cc5q1c8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Jul 2023 05:04:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"resource\": {\n        \"_id\": \"64c1bb829143533347e950a5\",\n        \"name\": \"Alexis Rodríguez\",\n        \"email\": \"a6.init+6@gmail.com\",\n        \"password\": \"$2a$08$kf0CnTlFEBj/5netfLTfE.JCs685vvZnO8BmZP3158J4fgjCMSkFS\",\n        \"blocked\": true,\n        \"created_at\": \"2023-07-27T00:34:10.200Z\",\n        \"updated_at\": \"2023-07-29T05:04:20.706Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"auth": {
@@ -1627,7 +1917,7 @@
 		"apikey": [
 			{
 				"key": "value",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpIjoiNjRjMThjYTUzZDBkM2M0OTMzM2U1Y2IzIiwiaWF0IjoxNjkwNDg1MjE0LCJleHAiOjE2OTM0ODUyMTR9.VqMmHcQiUNxUkCIT0xzC-6GslqYLGHxmTbN48A8kRcc",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpIjoiNjRjMWI4MTk2MWYwNDBlMjRlYWNmNzBhIiwiaWF0IjoxNjkwNjA3MjA1LCJleHAiOjE2OTA5MDcyMDV9.DzZSrvZ2t1Rp1rcZxQ7R49Mha_YZRLjsrgKJVYa0YPo",
 				"type": "string"
 			},
 			{
