@@ -120,6 +120,11 @@ const orderEndpoint = async (req, res) => {
           success: false,
           error: 'User not found with provided id'
         })
+      } else if (user.blocked) {
+        return res.status(403).json({
+          success: false,
+          error: 'User has been disabled for security reasons.'
+        })
       }
 
       // query items
@@ -337,7 +342,7 @@ router.post('/:order_id/cancel', userAuthorization, async (req, res) => {
       })
     }
   } catch (e) {
-    console.error('[DELETE] /dish/:dish_id: ' + e.message)
+    console.error('[POST] /order/:order_id/cancel: ' + e.message)
     return res.status(500).json({
       success: false,
       error: 'Something broke. Try again.'
